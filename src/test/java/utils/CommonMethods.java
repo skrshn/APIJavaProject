@@ -4,6 +4,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
@@ -24,7 +25,7 @@ public class CommonMethods {
         Map<Integer, Integer> lineMap = new TreeMap<>();
 
         int debitOrCreditTotalPages = Integer.parseInt(debitOrCreditResponseForPage.jsonPath().getString("total_pages"));
-        //System.out.println(debitOrCreditTotalPages);
+        System.out.println(transactionType+" "+debitOrCreditTotalPages);
 
         if (debitOrCreditTotalPages == 0) {
             System.out.println("Sorry There is no either Debit or Credit Transaction");
@@ -40,8 +41,8 @@ public class CommonMethods {
             String[] amountArrayComplete = debitOrCreditResponseForPage.jsonPath().getString("data.amount")
                     .replaceAll("[\\[$,\\]]", "").split(" ");
 
-            //System.out.println(Arrays.asList(userIdArrayComplete));
-            //System.out.println(Arrays.asList(amountArrayComplete));
+//            System.out.println(Arrays.asList(userIdArrayComplete));
+//            System.out.println(Arrays.asList(amountArrayComplete));
 
             for (int i = 0; i < userIdArrayComplete.length; i++) {
                 if (!lineMap.containsKey(Integer.valueOf(userIdArrayComplete[i]))) {
@@ -50,9 +51,9 @@ public class CommonMethods {
                     lineMap.replace(Integer.valueOf(userIdArrayComplete[i]), lineMap.get(Integer.valueOf(userIdArrayComplete[i])) + (int) Double.parseDouble(amountArrayComplete[i]));
                 }
             }
-            //System.out.println(lineMap);
+            System.out.println(pages+" "+lineMap);
         }
-        //System.out.println(lineMap);
+        System.out.println(transactionType+" "+lineMap);
 
         return lineMap;
     }
