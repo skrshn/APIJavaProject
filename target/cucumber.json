@@ -1,0 +1,77 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-06-24T19:53:24.434Z",
+        "line": 4,
+        "name": "Display the amount summary of all bank customers",
+        "description": "",
+        "id": "this-feature-gives-result-of-all-bank-customers-total-transactions;display-the-amount-summary-of-all-bank-customers",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 640100000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "a request is prepared to collect debit and credit amount of bank customers transactions",
+            "match": {
+              "location": "steps.HackerRankSteps.aRequestIsPreparedToCollectDebitAndCreditAmountOfBankCustomersTransactions()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2799193000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "a GET call is made to collect debit and credit amount of bank customers transactions",
+            "match": {
+              "location": "steps.HackerRankSteps.aGETCallIsMadeToCollectDebitAndCreditAmountOfBankCustomersTransactions()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 33508361000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the total debit and credit transactions collected from bank customers transactions",
+            "match": {
+              "location": "steps.HackerRankSteps.theTotalDebitAndCreditTransactionsCollectedFromBankCustomersTransactions()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25700000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the result of bank customer total transaction summary displayed in the console code",
+            "match": {
+              "location": "steps.HackerRankSteps.theResultOfBankCustomerTotalTransactionSummaryDisplayedInTheConsoleCode()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api"
+          }
+        ]
+      }
+    ],
+    "name": "This feature gives result of all bank customers total transactions",
+    "description": "",
+    "id": "this-feature-gives-result-of-all-bank-customers-total-transactions",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/HackerRank.feature",
+    "tags": []
+  }
+]
